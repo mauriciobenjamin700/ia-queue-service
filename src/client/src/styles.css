@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+input {
+    display: flex;
+    text-align: center;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.table-container {
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    width: 400px;
+    max-height: 300px;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 10px;
+}
