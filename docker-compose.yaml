@@ -8,3 +8,13 @@ services:
       - "8005:8000"
     env_file:
       - .env
+
+  feeling-ai:
+    container_name: feeling-ai
+    build:
+      context: ./src/feeling/
+      dockerfile: Dockerfile
+    ports:
+      - "8006:8000"
+    env_file:
+      - .env
