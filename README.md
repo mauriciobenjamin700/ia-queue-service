@@ -23,9 +23,23 @@ Crie um sistema distribuído (pode ser em python) em containers que:
 
 ## Regras Técnicas
 
-- Tudo deve ser containerizado (cada serviço em seu container).
+- Tudo deve ser conteinerizado (cada serviço em seu container).
 - Todos os containers conectados em uma mesma Docker network.
 - RabbitMQ deve ter a interface de administração habilitada para monitorar o crescimento da fila.
 - Cada consumidor deve processar mais lentamente que a taxa de geração de mensagens, para a fila encher visivelmente.
 
 Postar no SIGAA apenas o link para o projeto no git-hub com o readme bem estruturado.
+
+## Como Executar o Projeto
+
+Obtenha uma Chave de API GROQ [aqui](https://console.groq.com/keys)
+
+Crie um arquivo [.env](.env) na raiz do projeto e adicione sua chave de API GROQ no arquivo `.env`
+
+Exemplo:
+
+```bash
+GROQ_API_KEY=YOUR_API_KEY
+```
+
+Use o comando `docker compose up -d --build` para executar o projeto.
