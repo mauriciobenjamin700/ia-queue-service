@@ -64,12 +64,19 @@ Certifique-se de que todos os containers Docker estão rodando corretamente.
 ```bash
 docker ps
 ```
+1.1 imagem apresentando todos os conteiners que devem está funcionando
+
+![entrando no DBeaver](docs/docs-images/docker1.png)
+
 Caso algum conteiner não tenha subido execute o seguinte comando:
 
 **Subir conteiners**
 ``` 
   docker compose up <nome-do-conteiner> -d
 ```
+1.2 imagem representando o execução do comando.
+![entrando no DBeaver](docs/docs-images/docker2.png)
+
 ### 2. Abrir o navegado e selecionar imagens
 
 A primeira opção(classificar) é para as imagens relacionas a brasões de times,
@@ -79,6 +86,11 @@ enquanto a segunda opção(analisar) é para imagens referentes a análise de pe
 ```
   localhost:8008
 ```
+2.1 imagem representando a tela da ferramenta.
+![entrando no DBeaver](docs/docs-images/web1.png)
+
+2.2 selecionando uma imagem
+![entrando no DBeaver](docs/docs-images/web2.png)
 
 
 **abrir a pagina do RabbitMQ no navegador**
