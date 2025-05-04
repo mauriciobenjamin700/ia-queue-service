@@ -40,6 +40,16 @@ Exemplo:
 
 ```bash
 GROQ_API_KEY=YOUR_API_KEY
+CLASSIFY_QUEUE=team_queue
+FEELING_QUEUE=face_queue
+DB_PORT=5432
+DB_HOST=report-db
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_NAME=postgres
+DB_URL=postgresql://postgres:postgres@report-db:5432/postgres
 ```
+
+Observe que as demais variáveis de ambiente ja estão definidas e devem ser usadas.
 
 Use o comando `docker compose up -d --build` para executar o projeto.

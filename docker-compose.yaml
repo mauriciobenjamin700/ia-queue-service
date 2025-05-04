@@ -1,23 +1,4 @@
 services:
-  classify-ai:
-    container_name: classify-ai
-    build:
-      context: ./src/classify/
-      dockerfile: Dockerfile
-    ports:
-      - "8005:8000"
-    env_file:
-      - .env
-
-  feeling-ai:
-    container_name: feeling-ai
-    build:
-      context: ./src/feeling/
-      dockerfile: Dockerfile
-    ports:
-      - "8006:8000"
-    env_file:
-      - .env
 
   queue:
     container_name: queue
@@ -60,3 +41,47 @@ services:
     depends_on:
       - queue-init
 
+  report-db:
+    container_name: report-db
+    build:
+      context: ./src/report/
+      dockerfile: Dockerfile
+    ports:
+      - "5439:5432"
+    env_file:
+      - .env
+    depends_on:
+      - client
+    volumes:
+      - report_volume:/var/lib/postgresql/data
+
+
+  classify-ai:
+    container_name: classify-ai
+    build:
+      context: ./src/classify/
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    depends_on:
+      - report-db
+      - queue
+      - queue-init
+    environment:
+      - PYTHONUNBUFFERED=1
+  feeling-ai:
+    container_name: feeling-ai
+    build:
+      context: ./src/feeling/
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    depends_on:
+      - report-db
+      - queue
+      - queue-init
+    environment:
+      - PYTHONUNBUFFERED=1
+
+volumes:
+  report_volume:

@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS report (
+    id SERIAL PRIMARY KEY,
+    key VARCHAR(255) NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
