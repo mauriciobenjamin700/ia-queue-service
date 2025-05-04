@@ -90,7 +90,14 @@ enquanto a segunda opção(analisar) é para imagens referentes a análise de pe
 Neste caso tem que ter o o gerenciador de banco de dados DBeaver instalado no seu sistema.
 logo abaixo tem as imagens representando o passo a passo como conectar no banco de dados.
 
-
+1. conectando no postgres
+![entrando no DBeaver](docs/docs-images/db1.png)
+2. coloque a porta "5439" e senha "postgres"
+![entrando no DBeaver](docs/docs-images/db2.png)
+3. verificando conexão com o banco de dados
+![entrando no DBeaver](docs/docs-images/db3.png)
+4. caminho até ir nas tabelas
+![entrando no DBeaver](docs/docs-images/db4.png)
 
 
 
