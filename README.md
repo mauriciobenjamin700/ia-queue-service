@@ -53,3 +53,44 @@ DB_URL=postgresql://postgres:postgres@report-db:5432/postgres
 Observe que as demais variáveis de ambiente ja estão definidas e devem ser usadas.
 
 Use o comando `docker compose up -d --build` para executar o projeto.
+
+## 📸 Passo a passo: Como enviar as imagens
+
+### 1. Verifique os containers
+
+Certifique-se de que todos os containers Docker estão rodando corretamente.
+
+**Comando:**
+```bash
+docker ps
+```
+Caso algum conteiner não tenha subido execute o seguinte comando:
+
+**Subir conteiners**
+``` 
+  docker compose up <nome-do-conteiner> -d
+```
+### 2. Abrir o navegado e selecionar imagens
+
+A primeira opção(classificar) é para as imagens relacionas a brasões de times,
+enquanto a segunda opção(analisar) é para imagens referentes a análise de pessoas.
+
+**abrir a pagina da ferramenta no navegador**
+```
+  localhost:8008
+```
+
+
+**abrir a pagina do RabbitMQ no navegador**
+```
+  localhost:8007
+```
+
+### 3 verificar informações salvas no banco de dados
+Neste caso tem que ter o o gerenciador de banco de dados DBeaver instalado no seu sistema.
+logo abaixo tem as imagens representando o passo a passo como conectar no banco de dados.
+
+
+
+
+
