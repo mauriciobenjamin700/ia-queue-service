@@ -1,7 +1,22 @@
-FROM nginx:1.28.0-alpine
+FROM node:23-slim
 
-COPY . /usr/share/nginx/html
+# Defina o diretório de trabalho no container
+WORKDIR /app
 
-EXPOSE 80
+# Copie apenas os arquivos necessários para instalar as dependências
+COPY package.json package-lock.json ./
 
-CMD ["nginx", "-g", "daemon off;"]
+# Instale as dependências
+RUN npm install
+
+# Copie o restante dos arquivos do projeto
+COPY . .
+
+# Execute o build do projeto
+RUN npm run build
+
+# Exponha a porta 3000
+EXPOSE 3000
+
+# Comando para iniciar o servidor
+CMD ["npm", "start"]

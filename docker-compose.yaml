@@ -19,21 +19,44 @@ services:
     env_file:
       - .env
 
-  client:
-    container_name: client
-    build:
-      context: ./src/client/
-      dockerfile: Dockerfile
-    ports:
-      - "8007:80"
-
-  querue:
+  queue:
     container_name: queue
     build:
       context: ./src/queue/
       dockerfile: Dockerfile
     ports:
       - "5672:5672"
-      - "8008:15672"
+      - "8007:15672"
     env_file:
       - .env
+    
+  queue-init:
+    container_name: queue-init
+    build:
+      context: ./src/queue/config/
+      dockerfile: Dockerfile
+    depends_on:
+      - queue
+    env_file:
+      - .env
+    environment:
+      - PYTHONUNBUFFERED=1
+    entrypoint: >
+      sh -c "
+      while ! curl -s http://queue:15672 > /dev/null; do
+        echo 'Aguardando RabbitMQ...';
+        sleep 2;
+      done;
+      python init.py
+      "
+
+  client:
+    container_name: client
+    build:
+      context: ./src/client/
+      dockerfile: Dockerfile
+    ports:
+      - "8008:3000"
+    depends_on:
+      - queue-init
+
