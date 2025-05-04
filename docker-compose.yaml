@@ -26,3 +26,14 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8007:80"
+
+  querue:
+    container_name: queue
+    build:
+      context: ./src/queue/
+      dockerfile: Dockerfile
+    ports:
+      - "5672:5672"
+      - "8008:15672"
+    env_file:
+      - .env
