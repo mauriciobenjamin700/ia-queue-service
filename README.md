@@ -97,6 +97,16 @@ enquanto a segunda opção(analisar) é para imagens referentes a análise de pe
 ```
   localhost:8007
 ```
+2.3 conectando ao serviço RabbitMQ, password e login "guest".
+![rabbit1](docs/docs-images/rabbit1.png)
+2.4 painel com as exchanges e queues.
+![rabbit2](docs/docs-images/rabbit2.png)
+2.5 viasualizando as duas filas(queues) configuradas
+![rabbit3](docs/docs-images/rabbit3.png)
+2.6 acessando a fila face,e visualizando seus dados
+![rabbit4](docs/docs-images/rabbit4.png)
+2.7 acessando a fila team,e verificando os graficos
+![rabbit5](docs/docs-images/rabbit05.png)
 
 ### 3 verificar informações salvas no banco de dados
 Neste caso tem que ter o o gerenciador de banco de dados DBeaver instalado no seu sistema.
